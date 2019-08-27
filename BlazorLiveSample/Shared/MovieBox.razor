@@ -1,0 +1,21 @@
+﻿@using BlazorLiveSample.Domain
+
+<div class="card mb-4 box-shadow m-2" style="width:350px;">
+    <div class="card-header">
+        Year: @Movie.ReleaseDate.Year
+    </div>
+    <img class="card-img-top embed-responsive" style="object-fit: cover; height: 30rem;" src="@Movie.Pic" />
+    <div class="card-body">
+        <h5 class="card-title">@Movie.Title</h5>
+        <h6 class="card-subtitle mb-2 text-muted">@Movie.Genre</h6>
+        <p class="card-text">@Movie.Description</p>
+    </div>
+    <div class="card-footer">
+        @Movie.Cast
+    </div>
+</div>
+
+@functions{
+    [Parameter]
+    public Movie Movie { get; set; }
+}

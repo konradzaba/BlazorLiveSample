@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Once Upon a Time... in Hollywood",
+    "genre": "Comedy, Drama",
+    "cast": "Leonardo DiCaprio, Brad Pitt",
+    "releaseDate": "2019-08-16",
+    "pic": "/sample-data/hollywood.jpg",
+    "description": "A faded television actor and his stunt double strive to achieve fame and success in the film industry during the final years of Hollywood's Golden Age in 1969 Los Angeles."
+  },
+  {
+    "title": "Blade Runner 2049",
+    "genre": "Action, Drama",
+    "cast": "Harrison Ford, Ryan Gosling",
+    "releaseDate": "2017-10-06",
+    "pic": "/sample-data/bladerunner.jpg",
+    "description": "A young blade runner's discovery of a long-buried secret leads him to track down former blade runner Rick Deckard, who's been missing for thirty years."
+  },
+  {
+    "title": "Green Book",
+    "genre": "Comedy, Drama",
+    "cast": "Viggo Mortensen, Mahershala Ali",
+    "releaseDate": "2019-02-08",
+    "pic": "/sample-data/greenbook.jpg",
+    "description": "A working-class Italian-American bouncer becomes the driver of an African-American classical pianist on a tour of venues through the 1960s American South."
+  },
+  {
+    "title": "Passengers",
+    "genre": "Drama, Sci-Fi",
+    "cast": "Jennifer Lawrence, Chris Pratt",
+    "releaseDate": "2016-12-25",
+    "pic": "/sample-data/passengers.jpg",
+    "description": "A spacecraft traveling to a distant colony planet and transporting thousands of people has a malfunction in its sleep chambers. As a result, two passengers are awakened 90 years early."
+  },
+  {
+    "title": "Red Sparrow",
+    "genre": "Action, Drama",
+    "cast": "Jennifer Lawrence, Joel Edgerton",
+    "releaseDate": "2018-03-02",
+    "pic": "/sample-data/redsparrow.jpg",
+    "description": "Ballerina Dominika Egorova is recruited to 'Sparrow School,' a Russian intelligence service where she is forced to use her body as a weapon. Her first mission, targeting a C.I.A. agent, threatens to unravel the security of both nations."
+  },
+  {
+    "title": "John Wick 3",
+    "genre": "Action, Crime",
+    "cast": "Keanu Reeves, Halle Berry",
+    "releaseDate": "2019-05-17",
+    "pic": "/sample-data/wick.jpg",
+    "description": "Super-assassin John Wick is on the run after killing a member of the international assassin's guild, and with a $14 million price tag on his head - he is the target of hit men and women everywhere."
+  }
+]

@@ -1,0 +1,60 @@
+﻿@page "/movies"
+@inject HttpClient Http
+@inject IJSRuntime JS
+@using BlazorLiveSample.Domain
+@using BlazorUtils;
+@using System.IO;
+@using CsvHelper;
+
+<h1>Last watched movies</h1>
+
+<p>This shows a reusable Blazor component presenting movies I watched recently.</p>
+
+@if (movies == null)
+{
+    <p><em>That's a lot of movies, please wait...</em></p>
+}
+else
+{
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                @foreach (var movie in movies)
+                {
+                    <MovieBox Movie="movie"></MovieBox>
+                }
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" @onclick="@DownloadFile">Download</button>
+}
+
+@code {
+    Movie[] movies;
+
+    protected override async Task OnInitializedAsync()
+    {
+        movies = await Http.GetJsonAsync<Movie[]>("sample-data/movies.json");
+    }
+
+    void DownloadFile()
+    {
+        using (var memoryStream = new MemoryStream())
+        {
+            using (var textWriter = new StreamWriter(memoryStream))
+            using (var csv = new CsvWriter(textWriter))
+            {
+                csv.WriteRecords(movies.Select(x => new
+                {
+                    Title = x.Title,
+                    Release = x.ReleaseDate.ToShortDateString(),
+                    Genre = x.Genre,
+                    Cast = x.Cast,
+                    Description = x.Description
+                }));
+            }
+            FileUtil.SaveAs(JS, "movies.csv", memoryStream.ToArray());
+        }
+    }
+}

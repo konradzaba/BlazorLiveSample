@@ -16,8 +16,8 @@ else
         <thead>
             <tr>
                 <th>Date</th>
-                <th>Temp. (C)</th>
                 <th>Temp. (F)</th>
+                <th>Temp. (C)</th>
                 <th>Summary</th>
             </tr>
         </thead>
@@ -26,8 +26,8 @@ else
             {
                 <tr>
                     <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@temperatureConverter.LeftToRight(forecast.TemperatureC)</td>
+                    <td>@forecast.TemperatureF</td>
+                    <td>@Math.Round(temperatureConverter.LeftToRight(forecast.TemperatureF))</td>
                     <td>@forecast.Summary</td>
                 </tr>
             }
@@ -42,6 +42,6 @@ else
     protected override async Task OnInitializedAsync()
     {
         forecasts = await Http.GetJsonAsync<WeatherForecast[]>("sample-data/weather.json");
-        temperatureConverter = new UnitConversion.TemperatureConverter("celsius", "fahrenheit");
+        temperatureConverter = new UnitConversion.TemperatureConverter("fahrenheit", "celsius");
     }
 }

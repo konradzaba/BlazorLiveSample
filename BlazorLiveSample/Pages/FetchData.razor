@@ -27,7 +27,7 @@ else
                 <tr>
                     <td>@forecast.Date.ToShortDateString()</td>
                     <td>@forecast.TemperatureF</td>
-                    <td>@Math.Round(temperatureConverter.LeftToRight(forecast.TemperatureF))</td>
+                    <td>?</td>
                     <td>@forecast.Summary</td>
                 </tr>
             }
@@ -39,11 +39,9 @@ else
     string fahrenheit = "fahrenheit";
     string celsius = "celsius";
     WeatherForecast[] forecasts;
-    UnitConversion.TemperatureConverter temperatureConverter;
 
     protected override async Task OnInitializedAsync()
     {
         forecasts = await Http.GetJsonAsync<WeatherForecast[]>("sample-data/weather.json");
-        temperatureConverter = new UnitConversion.TemperatureConverter(fahrenheit,celsius);
     }
 }

@@ -36,12 +36,14 @@ else
 }
 
 @code {
+    string fahrenheit = "fahrenheit";
+    string celsius = "celsius";
     WeatherForecast[] forecasts;
     UnitConversion.TemperatureConverter temperatureConverter;
 
     protected override async Task OnInitializedAsync()
     {
         forecasts = await Http.GetJsonAsync<WeatherForecast[]>("sample-data/weather.json");
-        temperatureConverter = new UnitConversion.TemperatureConverter("fahrenheit", "celsius");
+        temperatureConverter = new UnitConversion.TemperatureConverter(fahrenheit,celsius);
     }
 }
